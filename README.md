@@ -4,13 +4,16 @@ This JavaScript project aims to decode the ADS-B signal from nearby
 airplanes using a RTL-SDR software and a DVB-T TV tuner dongle based 
 on the RTL2832U chipset and display it on a map.
 
-The project has two scripts: 
+The project has three scripts: 
 
-* **ADS-B Decoder.** The script receives the signal from the RTL1090 software 
+* **Server.** The script receives the signal from the RTL1090 software 
 and gets the data from the it. Then, the signal is decoded and saved it 
 in a vector to feed the other script.
 
-* **Flight Plotting.** It gets the aircraft flight data previously stored 
+* **Client.** It receives all the data from the aircraft, sent by the
+Server script, so it can be used on the webpage.
+
+* **Plotter.** It gets the aircraft flight data previously stored 
 and shows all the parameters and the path of the airplanes on a map.
 
 ## Introduction
@@ -39,6 +42,10 @@ Decoder script.
 Run the program:
 
     ./ADS-B Decoder
+    
+Open the webpage:
+
+    http://localhost:3000/
     
 ## Credits
 The sources of the project are the [RTL1090 Software](http://rtl1090.com/) 
